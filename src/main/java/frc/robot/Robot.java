@@ -7,6 +7,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import frc.robot.commands.DriveCommand;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -16,6 +17,7 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
  */
 public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
+  private Command m_teleopCommand;
 
   private RobotContainer m_robotContainer;
 
@@ -28,6 +30,7 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
+    m_teleopCommand = m_robotContainer.getDriveCommand();
   }
 
   /**
@@ -59,7 +62,9 @@ public class Robot extends TimedRobot {
     //m_autonomousCommand = m_robotContainer.getAutonomousCommand();
 
     // schedule the autonomous command (example)
-    if (m_autonomousCommand != null) {
+    if (m_teleopCommand != null) {
+      m_teleopCommand.cancel();
+
       m_autonomousCommand.schedule();
     }
   }
@@ -77,6 +82,8 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }
+
+    m_teleopCommand.schedule();
   }
 
   /** This function is called periodically during operator control. */

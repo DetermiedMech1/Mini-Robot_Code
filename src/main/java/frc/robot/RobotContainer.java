@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  private final static DriveSubsystem driveSubsystem = new DriveSubsystem();
+  private final DriveSubsystem driveSubsystem = new DriveSubsystem();
   private final CXbox cxbox = new CXbox();
   private final DriveCommand driveCommand = new DriveCommand(driveSubsystem, cxbox);
   
@@ -47,7 +47,7 @@ public class RobotContainer {
     return driveCommand;
   }
 
-  public static DriveSubsystem getDrivetrain() {
+  public DriveSubsystem getDrivetrain() {
     return driveSubsystem;
   }
 

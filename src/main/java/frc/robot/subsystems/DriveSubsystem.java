@@ -27,7 +27,7 @@ public class DriveSubsystem extends SubsystemBase {
     leftMotor.configOpenloopRamp(0.25);
     rightMotor.configOpenloopRamp(0.25);
     
-    leftMotor.setInverted(false);
+    leftMotor.setInverted(true);
     rightMotor.setInverted(false);
 
     drive = new DifferentialDrive(leftMotor, rightMotor);
