@@ -15,7 +15,7 @@ public class DriveCommand extends CommandBase {
   private final CXbox cxbox;
 
   /**
-   * Creates a new ExampleCommand.
+   * Creates a new DriveCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
@@ -33,6 +33,9 @@ public class DriveCommand extends CommandBase {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
+  /**
+   * calls the driveRobot function from driveSubsystem
+   */
   public void execute() {
     driveSubsystem.driveRobot(-cxbox.getLeftStickYWithDeadzone()*2, cxbox.getLeftStickXWithDeadzone()*2);
   }

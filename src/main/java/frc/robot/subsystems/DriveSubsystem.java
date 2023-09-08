@@ -24,15 +24,28 @@ public class DriveSubsystem extends SubsystemBase {
     leftMotor = new WPI_VictorSPX(Constants.MotorConstants.kLeftMotorID);
     rightMotor = new WPI_VictorSPX(Constants.MotorConstants.kRightMotorID);
 
+
+    /*
+     * this method is used to limit the speed it takes to go from 0-100% speed
+     * here it is set to 0.25 seconds
+    */
     leftMotor.configOpenloopRamp(0.25);
     rightMotor.configOpenloopRamp(0.25);
-    
+
+    leftMotor.enableVoltageCompensation(true);
+    rightMotor.enableVoltageCompensation(true);
+
     leftMotor.setInverted(true);
     rightMotor.setInverted(false);
+
 
     drive = new DifferentialDrive(leftMotor, rightMotor);
   }
 
+  /* 
+   * this function uses the .arcadeDrive method
+   * to move the robot like a tank
+  */
   public void driveRobot(double throttle, double turn) {
     drive.arcadeDrive(throttle, turn);
   }

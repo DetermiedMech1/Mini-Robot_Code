@@ -43,18 +43,26 @@ public class RobotContainer {
    * Use this to pass the autonomous command to the main {@link Robot} class.
    */
 
+  /**
+   * gets methods from DriveCommand
+   */
   public DriveCommand getDriveCommand() {
     return driveCommand;
   }
 
+  /**
+   * gets methods from DriveSubsystem
+   */
   public DriveSubsystem getDrivetrain() {
     return driveSubsystem;
   }
 
+  /**
+   *gets methods from CXbox
+  */
   public CXbox getCXbox() {
     return cxbox;
   }
-
   public void getAutonomousCommand() {
     // An example command will be run in autonomous
   }
