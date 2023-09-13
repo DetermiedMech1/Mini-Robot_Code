@@ -18,9 +18,9 @@ public final class Constants {
     public static final int kRightMotorID = 1;
   }
   public static class Deadzone {
-    public static final double kRTDeadZone = 0.5;
-    public static final double kLSDeadZone = 0.5;
-    public static final double kRSDeadZone = 0.5;
-    public static final double kLTDeadZone = 0.5;
+    public static final double kRTDeadzone = 0.5;
+    public static final double kLSDeadzone = 0.5;
+    public static final double kRSDeadzone = 0.5;
+    public static final double kLTDeadzone = 0.5;
   }
 }
