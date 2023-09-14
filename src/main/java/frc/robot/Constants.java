@@ -23,4 +23,9 @@ public final class Constants {
     public static final double kRSDeadzone = 0.5;
     public static final double kLTDeadzone = 0.5;
   }
+  public class LimeLightConstants {
+    public static final double kLLHeight = 0.0;
+    public static final double kObjectHeight = 0.0;
+    public static final double kLLPitch = 0.0;
+  }
 }
