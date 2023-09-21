@@ -11,6 +11,7 @@ import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMax.IdleMode;
 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
@@ -54,9 +55,20 @@ public class DriveSubsystem extends SubsystemBase {
   }
 
   public void trackObject() {
-    if (limeLight.hasTarget()){
-      driveRobot(0, limeLight.getXAngle());
+    if (limeLight.getXAngle() != 0 && Math.abs(limeLight.getXAngle()) >= 1) {
+      double speed = 0.03; // between 0 and 1
+      double direction = (-limeLight.getXAngle()) / Math.abs(limeLight.getXAngle());
+      double scaleFactor = (Math.abs(limeLight.getXAngle())) * speed;
+      SmartDashboard.putNumber("tracking velocity", direction * scaleFactor);
+      if (scaleFactor > 2) {
+        scaleFactor = 1.4;
+      }
+      System.out.println("direction: "+direction+" scale: "+scaleFactor);
+      driveRobot(0, 1);
     }
+    
+    driveRobot(0, 0);
+         
   }
   
   @Override

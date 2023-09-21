@@ -37,7 +37,7 @@ public class DriveCommand extends CommandBase {
    * calls the driveRobot function from driveSubsystem
    */
   public void execute() {
-    driveSubsystem.driveRobot(-cxbox.getLeftStickYWithDeadzone()/2, cxbox.getRightStickXWithDeadzone()/2);
+    driveSubsystem.driveRobot(cxbox.getLeftStickYWithDeadzone()/2, cxbox.getRightStickXWithDeadzone()/2);
   }
 
   // Called once the command ends or is interrupted.
