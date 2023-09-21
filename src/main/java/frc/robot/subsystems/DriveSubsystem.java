@@ -19,6 +19,7 @@ public class DriveSubsystem extends SubsystemBase {
   public WPI_VictorSPX leftMotor;
   public WPI_VictorSPX rightMotor;
   public DifferentialDrive drive;
+  public LimeLight limeLight;
 
   public DriveSubsystem() {
     leftMotor = new WPI_VictorSPX(Constants.MotorConstants.kLeftMotorID);
@@ -40,6 +41,8 @@ public class DriveSubsystem extends SubsystemBase {
 
 
     drive = new DifferentialDrive(leftMotor, rightMotor);
+
+    limeLight = new LimeLight();
   }
 
   /* 
@@ -50,6 +53,12 @@ public class DriveSubsystem extends SubsystemBase {
     drive.arcadeDrive(throttle, turn);
   }
 
+  public void trackObject() {
+    if (limeLight.hasTarget()){
+      driveRobot(0, limeLight.getXAngle());
+    }
+  }
+  
   @Override
   public void periodic() {
     // This method will be called once per scheduler run

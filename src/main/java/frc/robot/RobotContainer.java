@@ -6,6 +6,7 @@ package frc.robot;
 
 import frc.robot.commands.DriveCommand;
 import frc.robot.subsystems.DriveSubsystem;
+import frc.robot.subsystems.LimeLight;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
@@ -21,6 +22,7 @@ public class RobotContainer {
   private final DriveSubsystem driveSubsystem = new DriveSubsystem();
   private final CXbox cxbox = new CXbox();
   private final DriveCommand driveCommand = new DriveCommand(driveSubsystem, cxbox);
+  private final LimeLight limeLight = new LimeLight();
   
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -63,6 +65,7 @@ public class RobotContainer {
   public CXbox getCXbox() {
     return cxbox;
   }
+
   public void getAutonomousCommand() {
     // An example command will be run in autonomous
   }

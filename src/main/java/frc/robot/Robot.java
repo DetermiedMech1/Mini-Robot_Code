@@ -18,6 +18,7 @@ import frc.robot.commands.DriveCommand;
 public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
   private Command m_teleopCommand;
+  private Command m_trackObject;
 
   private RobotContainer m_robotContainer;
 
@@ -71,7 +72,9 @@ public class Robot extends TimedRobot {
 
   /** This function is called periodically during autonomous. */
   @Override
-  public void autonomousPeriodic() {}
+  public void autonomousPeriodic() {
+
+  }
 
   @Override
   public void teleopInit() {
@@ -98,7 +101,9 @@ public class Robot extends TimedRobot {
 
   /** This function is called periodically during test mode. */
   @Override
-  public void testPeriodic() {}
+  public void testPeriodic() {
+    m_robotContainer.getDrivetrain().trackObject();
+  }
 
   /** This function is called once when the robot is first started up. */
   @Override
