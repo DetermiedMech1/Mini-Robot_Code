@@ -139,6 +139,7 @@ public class CXbox {
     /** 
     * right stick X value
     */  
+
     public double getRightStickXWithDeadzone() {
         if (xboxcontroller.getRightX() > Constants.Deadzone.kRSDeadzone || xboxcontroller.getRightX() < -Constants.Deadzone.kRSDeadzone) {
             //System.out.println("right x = "+xboxcontroller.getRightX());

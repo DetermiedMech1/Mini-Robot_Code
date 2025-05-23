@@ -14,8 +14,8 @@ package frc.robot;
  */
 public final class Constants {
   public static class MotorConstants {
-    public static final int kLeftMotorID = 0;
-    public static final int kRightMotorID = 1;
+    public static final int kLeftMotorID = 1;
+    public static final int kRightMotorID = 2;
   }
   public static class Deadzone {
     public static final double kRTDeadzone = 0.5;

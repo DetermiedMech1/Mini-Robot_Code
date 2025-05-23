@@ -6,10 +6,10 @@ package frc.robot.commands;
 
 import frc.robot.CXbox;
 import frc.robot.subsystems.DriveSubsystem;
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Command;
 
 /** An example command that uses an example subsystem. */
-public class DriveCommand extends CommandBase {
+public class DriveCommand extends Command {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
   private final DriveSubsystem driveSubsystem;
   private final CXbox cxbox;

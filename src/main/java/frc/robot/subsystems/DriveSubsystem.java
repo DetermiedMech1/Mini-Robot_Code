@@ -4,27 +4,24 @@
 
 package frc.robot.subsystems;
 
-import com.ctre.phoenix.motorcontrol.can.VictorSPX;
-import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
-import com.ctre.phoenixpro.hardware.TalonFX;
-import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkMax.IdleMode;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
 public class DriveSubsystem extends SubsystemBase {
-  public WPI_VictorSPX leftMotor;
-  public WPI_VictorSPX rightMotor;
+  public WPI_TalonSRX leftMotor;
+  public WPI_TalonSRX rightMotor;
   public DifferentialDrive drive;
   public LimeLight limeLight;
 
   public DriveSubsystem() {
-    leftMotor = new WPI_VictorSPX(Constants.MotorConstants.kLeftMotorID);
-    rightMotor = new WPI_VictorSPX(Constants.MotorConstants.kRightMotorID);
+    leftMotor = new WPI_TalonSRX(Constants.MotorConstants.kLeftMotorID);
+    rightMotor = new WPI_TalonSRX(Constants.MotorConstants.kRightMotorID);
 
 
     /*
